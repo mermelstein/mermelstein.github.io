@@ -25,6 +25,9 @@ git push origin master
 echo "Building and deploying to GitHub Pages..."
 # This command builds the site and commits the *built files* to the 'gh-pages' branch, then pushes 'gh-pages'.
 # Ensure your build output directory (e.g., 'site/') is in your .gitignore file for the master branch.
-mkdocs gh-deploy --force
+#
+# Add --cname YOUR.CUSTOM.DOMAIN.COM to ensure your custom domain is set.
+# IMPORTANT: Replace YOUR.CUSTOM.DOMAIN.COM with your actual custom domain.
+mkdocs gh-deploy --force --cname danielmermelstein.com
 
 echo "Deployment complete. The site should be updated shortly."
