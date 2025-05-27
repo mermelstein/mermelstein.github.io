@@ -1,0 +1,34 @@
+# MkDocs
+site/
+mkdocs.yml.bak # In case of mkdocs build errors
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+dist/
+build/
+*.egg
+*.whl
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+venv.bak/
+.env
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# IDE / Editor specific
+.vscode/
+.idea/
+*.swp
+*~

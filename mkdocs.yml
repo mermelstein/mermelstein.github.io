@@ -1,5 +1,5 @@
 site_name: Daniel Mermelstein
-site_url: https://www.yourcustomdomain.com # <-- CHANGE THIS to your actual custom domain
+site_url: https://danielmermelstein.com
 
 nav:
   - Home: index.md
