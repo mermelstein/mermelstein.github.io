@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://danielmermelstein.com/</loc>
+         <loc>http://danielmermelstein.com/</loc>
          <lastmod>2025-05-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://danielmermelstein.com/projects/</loc>
+         <loc>http://danielmermelstein.com/projects/</loc>
          <lastmod>2025-05-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://danielmermelstein.com/projects/downwinder/</loc>
+         <loc>http://danielmermelstein.com/projects/downwinder/</loc>
          <lastmod>2025-05-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
