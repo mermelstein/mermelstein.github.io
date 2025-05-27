@@ -24,9 +24,32 @@
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
                 <a class="navbar-brand" href=".">Daniel Mermelstein</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
                 <!-- Expanded navigation -->
                 <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem active">
+                                <a href="." class="nav-link">Home</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Projects <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="projects/" class="dropdown-item">Overview</a>
+</li>
+                                    
+<li>
+    <a href="projects/downwinder/" class="dropdown-item">Downwinder Forecast</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
 
                     <ul class="nav navbar-nav ml-auto">
                         <li class="nav-item">
@@ -34,6 +57,16 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
+                            <li class="nav-item">
+                                <a rel="prev" class="nav-link disabled">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="projects/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
                     </ul>
                 </div>
             </div>
@@ -66,13 +99,13 @@
                     <div class="col-md-9" role="main">
 
 <h1 id="welcome">Welcome!</h1>
-<p>I'm Daniel Mermelstein, currently Director of Data at Sylva.</p>
+<p>I'm Daniel Mermelstein, currently <a href="https://www.linkedin.com/in/dani-mermelstein">Director of Data</a> at Sylva.</p>
 <h2 id="about-me">About Me</h2>
 <p>My career has been a journey through various parts of the data spectrum:</p>
 <p>History degree → 10-person startup → go-to (AKA only) business intelligence analyst at a global non-profit → data analyst (adtech) → data analyst / data scientist (fintech) → data engineer → data everything.</p>
-<p><strong>Fun Side Projects:</strong></p>
+<p><strong>Fun Side Projects:</strong> (<a href="projects/">See All Projects &raquo;</a>)</p>
 <ul>
-<li>Automated surf forecasts for the Hudson River (yes you read that right)</li>
+<li>Automated surf forecasts for the Hudson River (yes you read that right): <a href="https://docs.google.com/spreadsheets/d/18NrpiG0gxkhgAOR1RfpESE539-xTMSFeJXeR0vQ7bIg/edit?usp=sharing">Automated Google Sheet</a></li>
 <li>Sportsbetting data and NBA game predictions: <a href="https://getbloombet.com">https://getbloombet.com</a></li>
 <li>Personalized rowing workouts: <a href="https://www.rowhardplan.com">https://www.rowhardplan.com</a></li>
 <li>VSCode plugin for a custom LLM chat tool: <a href="https://github.com/mermelstein/e-acc-copilot">https://github.com/mermelstein/e-acc-copilot</a></li>
@@ -158,5 +191,5 @@
 
 <!--
 MkDocs version : 1.4.3
-Build Date UTC : 2025-05-27 18:11:06.668009+00:00
+Build Date UTC : 2025-05-27 20:01:11.934218+00:00
 -->

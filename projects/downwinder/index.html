@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://danielmermelstein.com/projects/downwinder/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Downwinder Forecast - Daniel Mermelstein</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Daniel Mermelstein</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Projects <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../" class="dropdown-item">Overview</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active">Downwinder Forecast</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" class="nav-link disabled">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#downwinder-hudson-river-surf-forecast" class="nav-link">Downwinder: Hudson River Surf Forecast</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#overview" class="nav-link">Overview</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#technical-stack" class="nav-link">Technical Stack</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#how-it-works" class="nav-link">How It Works</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#wave-height-estimation-a-tale-of-two-formulas" class="nav-link">Wave Height Estimation: A Tale of Two Formulas</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#output-publishing" class="nav-link">Output &amp; Publishing</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="downwinder-hudson-river-surf-forecast">Downwinder: Hudson River Surf Forecast</h1>
+<p>After many years dragonboating I bought an outrigger canoe and started paddling on the Hudson. Primarily for my own fitness, but I quickly discovered that out in the center of the river, if the conditions were right, you could surf! Joy oh joy! I've seen waves of 2-4 feet out there.</p>
+<p>The problem was that it took about an hour to get from my apartment to the boathouse, plus another 20 minutes to set up the canoe, only to find that the wind had shifted and there weren't any waves.</p>
+<p>That's where this forecaster came into play -&gt; it's accurate to about 1/4 of a foot. And worse-case scenario I can always just surf the wake of the container ships.</p>
+<h2 id="overview">Overview</h2>
+<p>The "Downwinder" service is a Google Sheet that's backed by a python service that does the following:</p>
+<ol>
+<li>Fetches current and forecast water speed data from the NOAA Tides &amp; Currents API.</li>
+<li>Fetches wind forecast data (speed and direction) from the OpenWeatherMap API.</li>
+<li>Combines these datasets, aligning them by timestamp.</li>
+<li>Calculates the effective wind speed acting on the water surface, considering the direction of water flow.</li>
+<li>Estimates potential wave heights using the Bretschneider's formula, based on the projected wind effect.</li>
+<li>Stores the raw and processed data in a cloud-hosted PostgreSQL database.</li>
+<li>Publishes a user-friendly forecast to a <a href="https://docs.google.com/spreadsheets/d/18NrpiG0gxkhgAOR1RfpESE539-xTMSFeJXeR0vQ7bIg/edit?usp=sharing">public Google Sheet</a>. It was easy to check on my phone before heading out.</li>
+<li>Posts updates and notable conditions to a dedicated Twitter account (It used to do this before Elon shut down the public Twitter API).</li>
+</ol>
+<h2 id="technical-stack">Technical Stack</h2>
+<ul>
+<li><strong>Programming Language:</strong> Python</li>
+<li><strong>Data Manipulation:</strong> Pandas, NumPy</li>
+<li><strong>APIs:</strong><ul>
+<li>NOAA Tides &amp; Currents API (water data)</li>
+<li>OpenWeatherMap API (wind data)</li>
+<li>Google Sheets API (publishing forecasts)</li>
+<li>Twitter API (social media updates)</li>
+</ul>
+</li>
+<li><strong>Database:</strong> PostgreSQL (cloud-hosted, will probably self-host at some point)</li>
+<li><strong>Deployment &amp; Orchestration:</strong><ul>
+<li>Docker for containerizing the Python application.</li>
+<li>A mac mini sitting on my desk.</li>
+<li>A cron job that runs the service once an hour.</li>
+</ul>
+</li>
+</ul>
+<h2 id="how-it-works">How It Works</h2>
+<p>The fundamental idea is that waves can form when wind blows over water; if the water has a current then an opposing wind can be gentle and still apply force to the surface. The Hudson River exhibits this phenomenon because it has strong tidal currents.</p>
+<p>So what I do here is automate the process of:</p>
+<ol>
+<li><strong>Gathering Data:</strong> Regularly fetching wind forecasts (speed and direction) and water current forecasts (speed and direction).</li>
+<li><strong>Aligning Forces:</strong> The core challenge is a geometric one: determining how the wind's force aligns with the water's movement over a sufficient distance (fetch) for waves to develop. We need to calculate the component of wind that is directly opposing or running with the current.</li>
+<li><strong>Estimating Wave Formation:</strong> Once the effective wind acting on the water is quantified, a mathematical model estimates the potential wave height.</li>
+<li><strong>Publishing Results:</strong> The forecast is then made available through a Google Sheet.</li>
+</ol>
+<h2 id="wave-height-estimation-a-tale-of-two-formulas">Wave Height Estimation: A Tale of Two Formulas</h2>
+<p>Estimating wave height in a dynamic river environment is not as complex as it seems. My initial approach involved a formula from the paper <a href="https://www.mdpi.com/2073-4441/11/11/2313/pdf">"Wave Forecasting in Shallow Water: A New Set of Growth Curves Depending on Bed Roughness"</a>. This seemed promising as it was designed for shallow water. However, it was primarily focused on depths less than 4 meters and fetch distances (the length of water over which wind blows) of around 1 kilometer. These parameters didn't quite match the typical conditions or the shorter fetch distances relevant for quick wave formation on the Hudson.</p>
+<p>Interestingly what worked better was the <strong>Bretschneider formula</strong>, which was developed in 1976 for forecasting waves generated by hurricanes in the open ocean <a href="https://journals.tdl.org/icce/index.php/icce/article/download/3061/2726">paper here</a>. With some eyeballing and empirical adjustments that gave me reasonably accurate estimates for the Hudson over fetch distances as short as 50-100 meters.</p>
+<p>The key data transformation now was to resolve the wind and water vectors to understand the direct opposition or reinforcement, which then feeds into my adjusted Bretschneider model. We do a little bit of trigonometry to find the effective wind speed in the direction of the water flow and BAM! we have a wave height estimate. Now we know if it's surf time.</p>
+<h2 id="output-publishing">Output &amp; Publishing</h2>
+<p>The processed forecast, including estimated wave heights, is written to a database. A subset of that data is then pushed to the public Google Sheet for easy viewing. Key forecast highlights or alerts used to be sent out via Twitter before the API changes.</p>
+<p>You can view the live forecast here: <a href="https://docs.google.com/spreadsheets/d/18NrpiG0gxkhgAOR1RfpESE539-xTMSFeJXeR0vQ7bIg/edit?usp=sharing">Hudson River Downwind Forecast Sheet</a>.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
