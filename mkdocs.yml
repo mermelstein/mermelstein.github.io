@@ -1,0 +1,19 @@
+site_name: Daniel Mermelstein
+site_url: https://danielmermelstein.com
+
+nav:
+  - Home: index.md
+  # Add more pages here later, e.g.:
+  # - About: about.md
+  # - Projects: projects.md
+
+theme:
+  name: mkdocs # A very basic theme. Others: readthedocs, material, bootstrap
+  # To achieve a 90's/early 2000's look, you can add custom CSS:
+  # extra_css:
+  #   - css/custom.css 
+  # (You would create docs/css/custom.css for this)
+
+# Optional: Add plugins here if needed
+# plugins:
+#   - search
