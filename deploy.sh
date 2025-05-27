@@ -18,10 +18,10 @@ echo "Committing changes with message: '$COMMIT_MESSAGE'"
 # Allow empty commits if there are no changes to the source files but we still want to trigger a build/deploy
 git commit -m "$COMMIT_MESSAGE" --allow-empty || echo "No changes to commit to main branch, or commit failed. Proceeding with deployment."
 
-echo "Pushing changes to main branch..."
-git push origin master # Or your default branch name e.g., master
-
 echo "Building and deploying to GitHub Pages..."
-mkdocs gh-deploy --force # --force can be useful if the gh-pages branch has diverged
+mkdocs gh-deploy --force
 
-echo "Deployment complete. Your site should be updated shortly."
+echo "Pushing changes to main branch..."
+git push origin master
+
+echo "Deployment complete. The site should be updated shortly."
