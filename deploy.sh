@@ -26,8 +26,8 @@ echo "Building and deploying to GitHub Pages..."
 # This command builds the site and commits the *built files* to the 'gh-pages' branch, then pushes 'gh-pages'.
 # Ensure your build output directory (e.g., 'site/') is in your .gitignore file for the master branch.
 #
-# Add --cname YOUR.CUSTOM.DOMAIN.COM to ensure your custom domain is set.
-# IMPORTANT: Replace YOUR.CUSTOM.DOMAIN.COM with your actual custom domain.
-mkdocs gh-deploy --force --cname danielmermelstein.com
+# To ensure your custom domain is set, create a CNAME file in your docs directory
+# (e.g., docs/CNAME) containing your custom domain (e.g., danielmermelstein.com).
+mkdocs gh-deploy --force
 
 echo "Deployment complete. The site should be updated shortly."
