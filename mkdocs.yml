@@ -1,5 +1,5 @@
 site_name: Daniel Mermelstein
-site_url: https://danielmermelstein.com
+site_url: danielmermelstein.com
 
 nav:
   - Home: index.md
