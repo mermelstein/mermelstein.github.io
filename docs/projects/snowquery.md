@@ -10,13 +10,13 @@ I wanted:
 
 *   A unified package for querying databases we were using from R.
 *   Abstract away the complexities and python requirements for the Snowflake connection.
-*   Use a simple and local credential management system.
+*   A simple and local credential management system.
 
 ## How It Works
 
 **For Snowflake:**
 
-`snowquery` uses the `reticulate` package to run the official [Snowflake Python connector](https://docs.snowflake.com/en/developer-guide/python-connector/python-connector-pandas) in the background. This approach bypasses the need for users to manually configure ODBC drivers or deal with other R-specific Snowflake connection hurdles. The results come bask as Pandas DataFrames from the Python connector which are seamlessly converted into R dataframes.
+`snowquery` uses the `reticulate` package to run the official [Snowflake Python connector](https://docs.snowflake.com/en/developer-guide/python-connector/python-connector-pandas) in the background. This bypasses the need for users to manually configure ODBC drivers or deal with other R-specific Snowflake connection hurdles. The results come back as Pandas DataFrames from the Python connector which are seamlessly converted into R dataframes.
 
 **For Redshift & PostgreSQL:**
 
