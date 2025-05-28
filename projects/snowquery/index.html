@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="http://danielmermelstein.com/projects/snowquery/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Project: Snowquery - R Package for Database Querying - Daniel Mermelstein</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Daniel Mermelstein</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Projects <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../" class="dropdown-item">Overview</a>
+</li>
+                                    
+<li>
+    <a href="../downwinder/" class="dropdown-item">Downwinder Forecast</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#project-snowquery-r-package-for-database-querying" class="nav-link">Project: Snowquery - R Package for Database Querying</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#the-motivation" class="nav-link">The Motivation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#how-it-works" class="nav-link">How It Works</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#key-features" class="nav-link">Key Features</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#technical-stack" class="nav-link">Technical Stack</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#installation-usage" class="nav-link">Installation &amp; Usage</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#project-links-status" class="nav-link">Project Links &amp; Status</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="project-snowquery-r-package-for-database-querying">Project: Snowquery - R Package for Database Querying</h1>
+<p><code>snowquery</code> is an R package I developed to simplify running SQL queries against Snowflake, Redshift, and PostgreSQL databases directly from R.</p>
+<h2 id="the-motivation">The Motivation</h2>
+<p>I love R for data analysis. I chose Snowflake as the data warehouse for my startup. Snowflake only had a python connector. Nail: meet Hammer.</p>
+<p>I wanted:
+*   A unified package for querying databases we were using from R.
+*   Abstract away the complexities and python requirements for the Snowflake connection.
+*   Use a simple and local credential management system.</p>
+<h2 id="how-it-works">How It Works</h2>
+<p><strong>For Snowflake:</strong>
+<code>snowquery</code> uses the <code>reticulate</code> package to run the official <a href="https://docs.snowflake.com/en/developer-guide/python-connector/python-connector-pandas">Snowflake Python connector</a> in the background. This approach bypasses the need for users to manually configure ODBC drivers or deal with other R-specific Snowflake connection hurdles. The results come bask as Pandas DataFrames from the Python connector which are seamlessly converted into R dataframes.</p>
+<p><strong>For Redshift &amp; PostgreSQL:</strong>
+For these databases, <code>snowquery</code> uses the standard <code>DBI</code> interface with the <code>RPostgres</code> driver, providing a normal and efficient connection method.</p>
+<h2 id="key-features">Key Features</h2>
+<ul>
+<li><strong>Simplified Querying:</strong> A single function, <code>queryDB()</code>, is the main entry point for executing queries.</li>
+<li><strong>Credential Management:</strong><ul>
+<li>The package looks for a <code>snowquery_creds.yaml</code> file in the user's home directory (<code>~</code>). This file can store connection details (account, username, password, warehouse, role, etc.) for multiple named connections.</li>
+<li>Credentials can also be passed directly to the <code>queryDB()</code> function, overriding or supplementing the YAML file.</li>
+</ul>
+</li>
+<li><strong>Supported Databases:</strong> Snowflake, Redshift, and PostgreSQL.</li>
+<li><strong>Python Dependency Management:</strong> For Snowflake connections, it checks for a Python installation and the <code>snowflake-connector-python[pandas]</code> library, providing guidance through error messages if they are missing.</li>
+<li><strong>Connection Timeout:</strong> Users can specify a timeout for database connections. Kind of important if you want to run very long-running queries.</li>
+</ul>
+<h2 id="technical-stack">Technical Stack</h2>
+<ul>
+<li><strong>R</strong></li>
+<li><strong>Python</strong> (for Snowflake via <code>reticulate</code>)</li>
+<li><code>snowflake-connector-python[pandas]</code></li>
+<li><code>DBI</code></li>
+<li><code>RPostgres</code></li>
+<li><code>yaml</code> (for credential file parsing)</li>
+</ul>
+<h2 id="installation-usage">Installation &amp; Usage</h2>
+<p>The package can be installed from CRAN or the development version from GitHub:</p>
+<pre><code class="language-R"># From CRAN
+install.packages(&quot;snowquery&quot;)
+</code></pre>
+<p>Typical usage would look like this:</p>
+<pre><code class="language-R">library(snowquery)
+
+# Using a named connection from snowquery_creds.yaml
+my_data &lt;- queryDB(&quot;SELECT * FROM my_awesome_table&quot;, conn_name = 'my_snowflake_dwh')
+
+# Manually passing credentials
+another_data &lt;- queryDB(
+  &quot;SELECT * FROM another_table&quot;,
+  db_type = 'postgres',
+  host = 'localhost',
+  port = 5432,
+  database = 'mydb',
+  username = 'user',
+  password = 'password'
+)
+</code></pre>
+<h2 id="project-links-status">Project Links &amp; Status</h2>
+<ul>
+<li><strong>Status:</strong> Active and available on CRAN.</li>
+<li><strong>CRAN:</strong> <a href="https://cran.r-project.org/package=snowquery">https://cran.r-project.org/package=snowquery</a></li>
+<li><strong>GitHub Repository:</strong> <a href="https://github.com/mermelstein/snowquery">https://github.com/mermelstein/snowquery</a></li>
+<li><strong>Package Website:</strong> <a href="https://snowquery.org">https://snowquery.org</a></li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
