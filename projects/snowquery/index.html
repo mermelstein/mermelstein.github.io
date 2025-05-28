@@ -112,15 +112,17 @@
 <p><code>snowquery</code> is an R package I developed to simplify running SQL queries against Snowflake, Redshift, and PostgreSQL databases directly from R.</p>
 <h2 id="the-motivation">The Motivation</h2>
 <p>I love R for data analysis. I chose Snowflake as the data warehouse for my startup. Snowflake only had a python connector. Nail: meet Hammer.</p>
-<p>I wanted:
-*   A unified package for querying databases we were using from R.
-*   Abstract away the complexities and python requirements for the Snowflake connection.
-*   Use a simple and local credential management system.</p>
+<p>I wanted:</p>
+<ul>
+<li>A unified package for querying databases we were using from R.</li>
+<li>Abstract away the complexities and python requirements for the Snowflake connection.</li>
+<li>Use a simple and local credential management system.</li>
+</ul>
 <h2 id="how-it-works">How It Works</h2>
-<p><strong>For Snowflake:</strong>
-<code>snowquery</code> uses the <code>reticulate</code> package to run the official <a href="https://docs.snowflake.com/en/developer-guide/python-connector/python-connector-pandas">Snowflake Python connector</a> in the background. This approach bypasses the need for users to manually configure ODBC drivers or deal with other R-specific Snowflake connection hurdles. The results come bask as Pandas DataFrames from the Python connector which are seamlessly converted into R dataframes.</p>
-<p><strong>For Redshift &amp; PostgreSQL:</strong>
-For these databases, <code>snowquery</code> uses the standard <code>DBI</code> interface with the <code>RPostgres</code> driver, providing a normal and efficient connection method.</p>
+<p><strong>For Snowflake:</strong></p>
+<p><code>snowquery</code> uses the <code>reticulate</code> package to run the official <a href="https://docs.snowflake.com/en/developer-guide/python-connector/python-connector-pandas">Snowflake Python connector</a> in the background. This approach bypasses the need for users to manually configure ODBC drivers or deal with other R-specific Snowflake connection hurdles. The results come bask as Pandas DataFrames from the Python connector which are seamlessly converted into R dataframes.</p>
+<p><strong>For Redshift &amp; PostgreSQL:</strong></p>
+<p>For these databases, <code>snowquery</code> uses the standard <code>DBI</code> interface with the <code>RPostgres</code> driver, providing a normal and efficient connection method.</p>
 <h2 id="key-features">Key Features</h2>
 <ul>
 <li><strong>Simplified Querying:</strong> A single function, <code>queryDB()</code>, is the main entry point for executing queries.</li>
@@ -154,7 +156,7 @@ install.packages(&quot;snowquery&quot;)
 my_data &lt;- queryDB(&quot;SELECT * FROM my_awesome_table&quot;, conn_name = 'my_snowflake_dwh')
 
 # Manually passing credentials
-another_data &lt;- queryDB(
+more_data &lt;- queryDB(
   &quot;SELECT * FROM another_table&quot;,
   db_type = 'postgres',
   host = 'localhost',
