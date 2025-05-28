@@ -20,7 +20,7 @@ I wanted:
 
 **For Redshift & PostgreSQL:**
 
-For these databases, `snowquery` uses the standard `DBI` interface with the `RPostgres` driver, providing a normal and efficient connection method.
+For these databases, `snowquery` uses the standard `DBI` interface with the `RPostgres` driver, making for a normal and efficient connection method.
 
 ## Key Features
 
