@@ -19,3 +19,12 @@ Here are some of the side projects I've worked on over the years.
 *   **Technologies:** Python (Django), Docker, Photon API (address autocomplete), Nominatim API (geocoding).
 *   **Status:** Active ([NYC3K.com](https://nyc3k.com)).
 *   [Read more about the NYC 3K Finder project &raquo;](projects/nyc3k.md)
+
+---
+
+## Snowquery: R Package for Database Querying
+
+*   **Description:** An R package to simplify running SQL queries on Snowflake, Redshift, and PostgreSQL. It leverages the Snowflake Python connector under the hood for robust Snowflake access. It allows easy data querying directly from R scripts without complex setup.
+*   **Technologies:** R, Python, reticulate, DBI, RPostgres, Snowflake Python Connector.
+*   **Status:** Active ([CRAN](https://cran.r-project.org/package=snowquery), [GitHub](https://github.com/mermelstein/snowquery), [Website](https://snowquery.org)).
+*   [Read more about the Snowquery project &raquo;](projects/snowquery.md)

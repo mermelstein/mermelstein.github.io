@@ -15,5 +15,6 @@ History degree → 10-person startup → go-to (AKA only) business intelligence 
 *   Sportsbetting data and NBA game predictions: [BloomBet Terminal](https://getbloombet.com)
 *   Personalized rowing workouts: [Row Hard](https://www.rowhardplan.com)
 *   VSCode plugin for a custom LLM chat tool: [e/acc Copilot](https://marketplace.visualstudio.com/items?itemName=mermelstein.e-acc-copilot)
+*   R package for easy database querying (Snowflake, Redshift, Postgres): [Snowquery](projects/snowquery.md)
 
 Beyond my professional life, I'm an avid extracurricular athlete and made it to the final round of selection for Team USA in 2015. I am a 5x Bronze medalist at the Dragon Boat World Championships.
