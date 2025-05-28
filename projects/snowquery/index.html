@@ -122,7 +122,7 @@
 <p><strong>For Snowflake:</strong></p>
 <p><code>snowquery</code> uses the <code>reticulate</code> package to run the official <a href="https://docs.snowflake.com/en/developer-guide/python-connector/python-connector-pandas">Snowflake Python connector</a> in the background. This bypasses the need for users to manually configure ODBC drivers or deal with other R-specific Snowflake connection hurdles. The results come back as Pandas DataFrames from the Python connector which are seamlessly converted into R dataframes.</p>
 <p><strong>For Redshift &amp; PostgreSQL:</strong></p>
-<p>For these databases, <code>snowquery</code> uses the standard <code>DBI</code> interface with the <code>RPostgres</code> driver, providing a normal and efficient connection method.</p>
+<p>For these databases, <code>snowquery</code> uses the standard <code>DBI</code> interface with the <code>RPostgres</code> driver, making for a normal and efficient connection method.</p>
 <h2 id="key-features">Key Features</h2>
 <ul>
 <li><strong>Simplified Querying:</strong> A single function, <code>queryDB()</code>, is the main entry point for executing queries.</li>
