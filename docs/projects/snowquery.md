@@ -7,6 +7,7 @@
 I love R for data analysis. I chose Snowflake as the data warehouse for my startup. Snowflake only had a python connector. Nail: meet Hammer.
 
 I wanted:
+
 *   A unified package for querying databases we were using from R.
 *   Abstract away the complexities and python requirements for the Snowflake connection.
 *   Use a simple and local credential management system.
@@ -14,9 +15,11 @@ I wanted:
 ## How It Works
 
 **For Snowflake:**
+
 `snowquery` uses the `reticulate` package to run the official [Snowflake Python connector](https://docs.snowflake.com/en/developer-guide/python-connector/python-connector-pandas) in the background. This approach bypasses the need for users to manually configure ODBC drivers or deal with other R-specific Snowflake connection hurdles. The results come bask as Pandas DataFrames from the Python connector which are seamlessly converted into R dataframes.
 
 **For Redshift & PostgreSQL:**
+
 For these databases, `snowquery` uses the standard `DBI` interface with the `RPostgres` driver, providing a normal and efficient connection method.
 
 ## Key Features
@@ -56,7 +59,7 @@ library(snowquery)
 my_data <- queryDB("SELECT * FROM my_awesome_table", conn_name = 'my_snowflake_dwh')
 
 # Manually passing credentials
-another_data <- queryDB(
+more_data <- queryDB(
   "SELECT * FROM another_table",
   db_type = 'postgres',
   host = 'localhost',
