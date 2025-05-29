@@ -28,3 +28,12 @@ Here are some of the side projects I've worked on over the years.
 *   **Technologies:** R, Python, reticulate, DBI, RPostgres, Snowflake Python Connector.
 *   **Status:** Active ([CRAN](https://cran.r-project.org/package=snowquery), [GitHub](https://github.com/mermelstein/snowquery), [Website](https://snowquery.org)).
 *   [Read more about the Snowquery project &raquo;](projects/snowquery.md)
+
+---
+
+## Simple dbt Runner: Self-Host dbt with GitHub Actions
+
+*   **Description:** An open-source project with GitHub Actions workflows to run dbt in production. I was the lead contributor, we built a cost-effective alternative to dbt Cloud for self-hosting dbt orchestration, CI/CD, and documentation.
+*   **Technologies:** dbt, GitHub Actions, Python, YAML, Shell.
+*   **Status:** Active, Open-Source ([GitHub](https://github.com/C00ldudeNoonan/simple-dbt-runner)).
+*   [Read more about the Simple dbt Runner project &raquo;](projects/simple-dbt-runner.md)
