@@ -46,4 +46,4 @@ The state-aware incremental runs are a key feature, minimizing computation by on
 ## Project Links & Status
 
 *   **Status:** Active, open-source.
-*   **GitHub Repository:** [C00ldudeNoonan/simple-dbt-runner](https://github.com/C00ldudeNoonan/simple-dbt-runner)
+*   **GitHub Repository:** <a href="https://github.com/C00ldudeNoonan/simple-dbt-runner" target="_blank" rel="noopener noreferrer">simple-dbt-runner</a>
