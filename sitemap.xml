@@ -2,27 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>http://danielmermelstein.com/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://danielmermelstein.com/projects/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://danielmermelstein.com/projects/downwinder/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://danielmermelstein.com/projects/nyc3k/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://danielmermelstein.com/projects/simple-dbt-runner/</loc>
+         <lastmod>2025-05-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://danielmermelstein.com/projects/snowquery/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-05-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
