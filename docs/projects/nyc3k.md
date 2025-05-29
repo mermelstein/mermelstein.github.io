@@ -60,3 +60,8 @@ The backend uses Photon for address auto-complete (both while you type and also 
 
 *   Once results are shown, a filter panel allows users to refine their search.
 *   Users can filter programs based on where specific applicant groups had a "High Likelihood" of admission in the previous year (e.g., Sibling Priority).
+
+## Project Links & Status
+
+*   **Status:** Active.
+*   **GitHub Repository:** <a href="https://nyc3k.com" target="_blank" rel="noopener noreferrer">https://nyc3k.com</a>

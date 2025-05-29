@@ -56,4 +56,4 @@ The key data transformation now was to resolve the wind and water vectors to und
 ## Output & Publishing
 The processed forecast, including estimated wave heights, is written to a database. A subset of that data is then pushed to the public Google Sheet for easy viewing. Key forecast highlights or alerts used to be sent out via Twitter before the API changes.
 
-You can view the live forecast here: [Hudson River Downwind Forecast Sheet](https://docs.google.com/spreadsheets/d/18NrpiG0gxkhgAOR1RfpESE539-xTMSFeJXeR0vQ7bIg/edit?usp=sharing).
+You can view the live forecast here: (<a href="https://docs.google.com/spreadsheets/d/18NrpiG0gxkhgAOR1RfpESE539-xTMSFeJXeR0vQ7bIg/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Hudson River Downwind Forecast Sheet</a>)

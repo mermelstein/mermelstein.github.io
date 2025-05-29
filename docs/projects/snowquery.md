@@ -73,6 +73,6 @@ more_data <- queryDB(
 ## Project Links & Status
 
 *   **Status:** Active and available on CRAN.
-*   **CRAN:** [https://cran.r-project.org/package=snowquery](https://cran.r-project.org/package=snowquery)
-*   **GitHub Repository:** [https://github.com/mermelstein/snowquery](https://github.com/mermelstein/snowquery)
-*   **Package Website:** [https://snowquery.org](https://snowquery.org)
+*   **CRAN:** <a href="https://cran.r-project.org/package=snowquery" target="_blank" rel="noopener noreferrer">https://cran.r-project.org/package=snowquery</a>
+*   **GitHub Repository:** <a href="https://github.com/mermelstein/snowquery" target="_blank" rel="noopener noreferrer">https://github.com/mermelstein/snowquery</a>
+*   **Package Website:** <a href="https://snowquery.org" target="_blank" rel="noopener noreferrer">https://snowquery.org</a>
