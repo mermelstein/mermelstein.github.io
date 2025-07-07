@@ -10,7 +10,7 @@ History degree → 10-person startup → go-to (AKA only) business intelligence 
 
 **Fun Side Projects:** ([See All Projects &raquo;](projects.md))
 
-Over the years my project work has grown across a few areas. Below are some highlights I've published or am able to discuss publicly. My professional experience also includes designing and implementing systems for Retrieval Augmented Generation (RAG) with PostgreSQL and pgvector, A/B testing platforms, data enrichment pipelines (e.g., from LinkedIn), and comprehensive automated reporting solutions for finance, accounting, and general business intelligence.
+Over the years my project work has grown across a few areas. Below are some highlights I've published or am able to discuss publicly. My professional experience also includes designing and implementing systems for Retrieval Augmented Generation (RAG) with PostgreSQL and pgvector, A/B testing platforms, data enrichment pipelines (e.g., from LinkedIn), and automated reporting solutions for product, marketing, finance, accounting, and general BI.
 
 <table style="background-color: transparent;">
   <tr style="background-color: transparent;">
