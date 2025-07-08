@@ -37,3 +37,12 @@ Here are some of the side projects I've worked on over the years.
 *   **Technologies:** dbt, GitHub Actions, Python, YAML, Shell.
 *   **Status:** Active, Open-Source (<a href="https://github.com/C00ldudeNoonan/simple-dbt-runner" target="_blank" rel="noopener noreferrer">GitHub</a>).
 *   [Read more about the Simple dbt Runner project &raquo;](projects/simple-dbt-runner.md)
+
+---
+
+## Haggadah Translation
+
+*   **Description:** A project to translate the Goldberg Haggadah from English to Chinese. It uses Python and OCR to extract the English text from a PDF, then uses GPT-3.5 to translate the text page by page.
+*   **Technologies:** Python, Docker, OCR (pytesseract), GPT-3.5.
+*   **Status:** Complete
+*   [Read more about the Haggadah Translation project &raquo;](projects/haggadah_translation.md)

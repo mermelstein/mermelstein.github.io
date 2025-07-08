@@ -34,7 +34,7 @@ Over the years my project work has grown across a few areas. Below are some high
       <h4 style="font-weight: bold; font-size: 1.1em;">AI, Language & Development Tools</h4>
       <ul>
         <li>VSCode plugin for a custom LLM chat tool: <a href="https://marketplace.visualstudio.com/items?itemName=mermelstein.e-acc-copilot" target="_blank" rel="noopener noreferrer">e/acc Copilot</a></li>
-        <li>Haggadah Translation (English to Mandarin): <code>haggadah-translation</code></li>
+        <li>Haggadah Translation (English to Mandarin): <a href="projects/haggadah_translation">Haggadah Translation</a></li>
       </ul>
     </td>
   </tr>

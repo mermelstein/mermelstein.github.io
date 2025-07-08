@@ -9,6 +9,7 @@ nav:
     - NYC 3K Finder: projects/nyc3k.md
     - Snowquery: projects/snowquery.md
     - Simple dbt Runner: projects/simple-dbt-runner.md
+    - Haggadah Translation: projects/haggadah_translation.md
 
 theme:
   name: mkdocs # A very basic theme. Others: readthedocs, material, bootstrap
