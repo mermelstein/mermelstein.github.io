@@ -4,27 +4,27 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="None">
         
-        <link rel="canonical" href="http://danielmermelstein.com/">
-        <link rel="shortcut icon" href="img/favicon.ico">
-        <title>Daniel Mermelstein</title>
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/fontawesome.min.css" rel="stylesheet">
-        <link href="css/brands.min.css" rel="stylesheet">
-        <link href="css/solid.min.css" rel="stylesheet">
-        <link href="css/v4-font-face.min.css" rel="stylesheet">
-        <link href="css/base.css" rel="stylesheet">
+        
+        <link rel="canonical" href="http://danielmermelstein.com/projects/haggadah_translation/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Haggadah Translation - Daniel Mermelstein</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
         <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
         <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
         <script>hljs.highlightAll();</script> 
     </head>
 
-    <body class="homepage">
+    <body>
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-                <a class="navbar-brand" href=".">Daniel Mermelstein</a>
+                <a class="navbar-brand" href="../..">Daniel Mermelstein</a>
                 <!-- Expander button -->
                 <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -35,34 +35,34 @@
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
                             <li class="nav-item">
-                                <a href="." class="nav-link active" aria-current="page">Home</a>
+                                <a href="../.." class="nav-link">Home</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Projects</a>
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Projects</a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="projects/" class="dropdown-item">Overview</a>
+    <a href="../" class="dropdown-item">Overview</a>
 </li>
                                     
 <li>
-    <a href="projects/downwinder/" class="dropdown-item">Downwinder Forecast</a>
+    <a href="../downwinder/" class="dropdown-item">Downwinder Forecast</a>
 </li>
                                     
 <li>
-    <a href="projects/nyc3k/" class="dropdown-item">NYC 3K Finder</a>
+    <a href="../nyc3k/" class="dropdown-item">NYC 3K Finder</a>
 </li>
                                     
 <li>
-    <a href="projects/snowquery/" class="dropdown-item">Snowquery</a>
+    <a href="../snowquery/" class="dropdown-item">Snowquery</a>
 </li>
                                     
 <li>
-    <a href="projects/simple-dbt-runner/" class="dropdown-item">Simple dbt Runner</a>
+    <a href="../simple-dbt-runner/" class="dropdown-item">Simple dbt Runner</a>
 </li>
                                     
 <li>
-    <a href="projects/haggadah_translation/" class="dropdown-item">Haggadah Translation</a>
+    <a href="./" class="dropdown-item active" aria-current="page">Haggadah Translation</a>
 </li>
                                 </ul>
                             </li>
@@ -75,12 +75,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" class="nav-link disabled">
+                                <a rel="prev" href="../simple-dbt-runner/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="projects/" class="nav-link">
+                                <a rel="next" class="nav-link disabled">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -102,9 +102,17 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-bs-level="1"><a href="#welcome" class="nav-link">Welcome!</a>
+            <li class="nav-item" data-bs-level="1"><a href="#project-haggadah-translation" class="nav-link">Project: Haggadah Translation</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-bs-level="2"><a href="#about-me" class="nav-link">About Me</a>
+            <li class="nav-item" data-bs-level="2"><a href="#the-process" class="nav-link">The Process</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#technical-stack" class="nav-link">Technical Stack</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#project-status" class="nav-link">Project Status</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -115,42 +123,27 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="welcome">Welcome!</h1>
-<p>I'm Daniel Mermelstein, currently <a href="https://www.linkedin.com/in/dani-mermelstein" target="_blank" rel="noopener noreferrer">Director of Data</a> at Sylva.</p>
-<h2 id="about-me">About Me</h2>
-<p>My career has been a journey through various parts of the data spectrum:</p>
-<p>History degree → 10-person startup → go-to (AKA only) business intelligence analyst at a global non-profit → data analyst (adtech) → data analyst / data scientist (fintech) → data engineer → data team leader.</p>
-<p><strong>Fun Side Projects:</strong> (<a href="projects/">See All Projects &raquo;</a>)</p>
-<p>Over the years my project work has grown across a few areas. Below are some highlights I've published or am able to discuss publicly. My professional experience also includes designing and implementing systems for Retrieval Augmented Generation (RAG) with PostgreSQL and pgvector, A/B testing platforms, data enrichment pipelines (e.g., from LinkedIn), and automated reporting solutions for product, marketing, finance, accounting, and general BI.</p>
-<table style="background-color: transparent;">
-  <tr style="background-color: transparent;">
-    <td style="vertical-align:top; padding-right: 20px; width: 50%;">
-      <h4 style="font-weight: bold; font-size: 1.1em;">Data Engineering & Orchestration</h4>
-      <ul>
-        <li>Open-source dbt runner using GitHub Actions: <a href="projects/simple-dbt-runner">Simple dbt Runner</a></li>
-        <li>R package for easy database querying (Snowflake, Redshift, Postgres): <a href="projects/snowquery">Snowquery</a></li>
-        <li>R & Python in one Docker Container: <a href="https://github.com/mermelstein/docker-python-and-r" target="_blank" rel="noopener noreferrer">docker-python-and-r</a></li>
-        <li>DuckDB Simultaneous Connection Benchmark: <a href="https://github.com/mermelstein/duckdb_connection_benchmark" target="_blank" rel="noopener noreferrer">duckdb_connection_benchmark</a></li>
-      </ul>
-    </td>
-    <td style="vertical-align:top; width: 50%;">
-      <h4 style="font-weight: bold; font-size: 1.1em;">Web Applications & Data Visualization</h4>
-      <ul>
-        <li>Searchable database of all the 3K programs in NYC: <a href="projects/nyc3k">NYC3K.com</a></li>
-        <li>Automated surf forecasts for the Hudson River: <a href="projects/downwinder">Downwinder</a></li>
-        <li>Sportsbetting data and NBA game predictions: <a href="https://getbloombet.com" target="_blank" rel="noopener noreferrer">BloomBet Terminal</a></li>
-        <li>Personalized rowing workouts: <a href="https://www.rowhardplan.com" target="_blank" rel="noopener noreferrer">Row Hard</a></li>
-      </ul>
-      <h4 style="font-weight: bold; font-size: 1.1em;">AI, Language & Development Tools</h4>
-      <ul>
-        <li>VSCode plugin for a custom LLM chat tool: <a href="https://marketplace.visualstudio.com/items?itemName=mermelstein.e-acc-copilot" target="_blank" rel="noopener noreferrer">e/acc Copilot</a></li>
-        <li>Haggadah Translation (English to Mandarin): <a href="projects/haggadah_translation">Haggadah Translation</a></li>
-      </ul>
-    </td>
-  </tr>
-</table>
-
-<p>Beyond my professional life, I'm an avid extracurricular athlete and made it to the final round of selection for Team USA in 2015. I am a 5x Bronze medalist at the Dragon Boat World Championships.</p></div>
+<h1 id="project-haggadah-translation">Project: Haggadah Translation</h1>
+<p>While my in-laws were visiting for Passover in 2023, I wanted to ensure they could fully participate in the Seder. Problems was they don't speak English very well. To help them follow along I translated our family's Haggadah into Mandarin Chinese and give them their own copy.</p>
+<h2 id="the-process">The Process</h2>
+<p>The goal was to create a translated version that mirrored the original's layout and page numbering, making it easy for everyone to follow along (we even had them read from their book when it was their turn).</p>
+<ol>
+<li><strong>Source Material:</strong> I found a PDF version of our specific Haggadah.</li>
+<li><strong>Text Extraction:</strong> I extracted the English text from the PDF, one page at a time using off-the-shelf OCR software.</li>
+<li><strong>Translation:</strong> Each page's text was then fed into GPT-3.5 with a prompt to translate it into Mandarin Chinese while preserving the original structure.</li>
+<li><strong>Quality Assurance:</strong> A native Mandarin speaker (my wife) reviewed the translation. They gave it a thumbs-up, confirming accuracy and readability.</li>
+<li><strong>Final Product:</strong> The translated pages were compiled and printed to create a complete, parallel Haggadah for the in-laws.</li>
+</ol>
+<h2 id="technical-stack">Technical Stack</h2>
+<ul>
+<li><strong>Python:</strong> For scripting the OCR and translation workflow.</li>
+<li><strong>OCR (pytesseract):</strong> To extract text from the PDF.</li>
+<li><strong>GPT-3.5:</strong> For the English to Mandarin Chinese translation.</li>
+</ul>
+<h2 id="project-status">Project Status</h2>
+<ul>
+<li><strong>Status:</strong> Completed.</li>
+</ul></div>
             </div>
         </div>
 
@@ -158,13 +151,13 @@
             <hr>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
-        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
         <script>
-            var base_url = ".",
+            var base_url = "../..",
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
-        <script src="js/base.js"></script>
-        <script src="search/main.js"></script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
@@ -229,8 +222,3 @@
 
     </body>
 </html>
-
-<!--
-MkDocs version : 1.6.1
-Build Date UTC : 2025-07-08 18:04:55.664305+00:00
--->
