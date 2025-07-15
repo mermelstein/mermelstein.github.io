@@ -13,7 +13,7 @@ History degree → 10-person startup → go-to (AKA only) business intelligence 
 Over the years my project work has grown across a few areas. Below are some highlights I've published or am able to discuss publicly. My professional experience also includes:
 
 - Leading high-performing data teams
-- Automating accounting processes at a holding company
+- Automating accounting processes for a holding company across 12 subsidiaries. Talk about serious cost reductions.
 - Closing a consumer bank (you should really ask about this one!)
 - Building A/B test analysis platforms, data enrichment pipelines (e.g. from LinkedIn), and automated reporting solutions for product, marketing, finance, accounting, and general BI.
 - DWH migrations or implementing a DWH solution from 0 to 1
