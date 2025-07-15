@@ -6,7 +6,7 @@ I'm Daniel Mermelstein, currently <a href="https://www.linkedin.com/in/dani-merm
 
 My career has been a journey through various parts of the data spectrum:
 
-History degree → 10-person startup → go-to (AKA only) business intelligence analyst at a global non-profit → data analyst (adtech) → data analyst / data scientist (fintech) → data engineer → data team leader.
+History degree → 10-person startup → go-to (AKA only) business intelligence analyst at a global non-profit → data analyst (adtech) → data analyst / data scientist (fintech) → data engineer → data leader.
 
 **Fun Side Projects:** ([See All Projects &raquo;](projects.md))
 
