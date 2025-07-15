@@ -2,7 +2,7 @@
 
 The "Simple dbt Runner" is an open-source project I spearheaded to provide a cost-effective and flexible alternative for running dbt (data build tool) in production. This was a response to changes in dbt Cloud's pricing, which for my organization and many others would have resulted in cost increases of many multiples. The basics of the price change were from a cost per seat to usage costs based on time of each DAG run.
 
-The primary function of dbt Cloud at the time was just scheduling. There were a couple other features but nothing major, and we were happy to pay a small monthly fee to not have to think about it. the moment it became a real cost center we decided to cut it.
+The primary function of dbt Cloud at the time was just scheduling. There were a couple other features but nothing major, and we were happy to pay a small monthly fee to not have to think about it. The moment it became a real cost center we decided to cut it.
 
 ## Our Solution: Open-Source dbt Runners
 
@@ -47,3 +47,4 @@ The state-aware incremental runs are a key feature, minimizing computation by on
 
 *   **Status:** Active, open-source.
 *   **GitHub Repository:** <a href="https://github.com/C00ldudeNoonan/simple-dbt-runner" target="_blank" rel="noopener noreferrer">simple-dbt-runner</a>
+    * The repo is hosted by a team member but as of 2025 I am still the primary code contributor and maintainer
