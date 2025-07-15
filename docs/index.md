@@ -14,7 +14,7 @@ Over the years my project work has grown across a few areas. Below are some high
 
 - Leading high-performing data teams
 - Automating accounting processes for a holding company across 12 subsidiaries. Talk about serious cost reductions.
-- Closing a consumer bank (you should really ask about this one!)
+- Closing a US consumer bank (you should really ask about this one!)
 - Building A/B test analysis platforms, data enrichment pipelines (e.g. from LinkedIn), and automated reporting solutions for product, marketing, finance, accounting, and general BI.
 - DWH migrations or implementing a DWH solution from 0 to 1
 - Designing and implementing systems for Retrieval Augmented Generation (RAG) with PostgreSQL and pgvector
