@@ -1,6 +1,6 @@
 # Welcome!
 
-I'm Daniel Mermelstein, currently <a href="https://www.linkedin.com/in/dani-mermelstein" target="_blank" rel="noopener noreferrer">Director of Data</a> at Sylva.
+I'm Daniel Mermelstein, currently a <a href="https://www.linkedin.com/in/dani-mermelstein" target="_blank" rel="noopener noreferrer">Data Engineering Manager</a> at Meta.
 
 ## About Me
 
